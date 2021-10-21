@@ -1,7 +1,11 @@
 def main():
     """Контроллер функций треугольника"""
 
-    parties = get_parties()
+    data = get_parties()
+
+    if not data['status']:
+        return 'Треугольник не существует'
+    parties = data['parties']
 
     if not check_existence(parties):
         return 'Треугольник не существует'
@@ -15,9 +19,17 @@ def get_parties():
     parties = []
 
     for i in range(3):
-        parties.append(float(input(f'Длина стороны {i + 1}: ')))
+        part = input(f'Длина стороны {i + 1}: ')
 
-    return parties
+        if not is_number(part):
+            return {'status': False}
+
+        parties.append(float(part))
+
+    return {
+        'status': True,
+        'parties': parties
+    }
 
 
 def check_existence(parties):
@@ -42,6 +54,16 @@ def get_type(parties):
         return 'Треугольник равнобедренный'
     else:
         return 'Треугольник общего вида'
+
+
+def is_number(part):
+    """Проверяет, можно ли преобразовать строку в вещественное число"""
+
+    try:
+        float(part)
+        return True
+    except ValueError:
+        return False
 
 
 # Main program

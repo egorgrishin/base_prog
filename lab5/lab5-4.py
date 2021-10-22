@@ -10,7 +10,7 @@ def triangle():
     if not check_existence(parties):
         return 'Треугольник не существует'
 
-    print(get_type(parties))
+    return get_type(parties)
 
 
 def get_parties():
@@ -138,8 +138,8 @@ def get_times():
     times = [
         input('Время отправления поезда (в часах): '),
         input('Время отправления поезда (в минутах): '),
-        input('Время отправления поезда (в часах): '),
-        input('Время отправления поезда (в минутах): '),
+        input('Время поезда в пути (в часах): '),
+        input('Время поезда в пути (в минутах): '),
     ]
 
     for time in times:
@@ -154,6 +154,7 @@ def get_times():
 
 def count_time(times):
     """Считает, сколько времени поезд провел в пути"""
+
     add_hours = 0
     result = {
         'minutes': 0,
@@ -177,7 +178,6 @@ def count_time(times):
 
 
 # Main program
-# print(triangle())
-# equation()
-
+print(triangle())
+equation()
 arrival_time()

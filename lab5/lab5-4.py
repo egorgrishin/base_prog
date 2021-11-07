@@ -165,12 +165,12 @@ def count_time(times):
     tmp = times[3] + times[1]
     add_hours += tmp // 60
     result['minutes'] = str(tmp % 60)
-    if len(result['minutes'] < 2):
+    if len(result['minutes']) < 2:
         result['minutes'] = '0' + result['minutes']
 
     tmp = times[2] + times[0]
     result['hours'] = str(tmp % 24 + add_hours)
-    if len(result['hours'] < 2):
+    if len(result['hours']) < 2:
         result['hours'] = '0' + result['hours']
     result['days'] = str(times[2] // 24)
 

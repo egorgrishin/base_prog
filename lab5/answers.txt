@@ -1,0 +1,36 @@
+1)
+a) 1
+b) 2
+c) 0
+
+2)
+if A:
+    X = True
+elif B and C:
+    X = True
+else:
+    X = False
+
+3)
+X = B if A else C
+
+4)
+if condition1:
+    action block if condition1 is True
+elif condition2:
+    action block if condition2 is True and condition1 is False
+......
+else:
+    action block if all conditions is False
+
+Если условие condition1 истинно, то выполняется блок if.
+После if может находиться любое количествое elif, а может не быть ни одного.
+Если condition1 ложно, то выполняется первое истинное условие elif.
+Если такого условия нет или вообще отсутсвует elif, то выполняется блок else.
+Блока else тоже может и не быть. Тогда это будет одиночное условие if либо же конструкция if-elif
+
+5)
+a) 12
+b) -13
+c) -7
+d) -3

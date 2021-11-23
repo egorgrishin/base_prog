@@ -1,6 +1,6 @@
-n = int(input("Введите верхнюю границу диапазона: "))
-sieve = set(range(2, n+1))
-while sieve:
-    prime = min(sieve)
-    print(prime)
-    sieve -= set(range(prime, n+1, prime))
+max_number = int(input("Введите верхнюю границу диапазона: "))
+numbers_set = set(range(2, max_number + 1))
+while numbers_set:
+    min_number = min(numbers_set)
+    print(min_number)
+    numbers_set -= set(range(min_number, max_number + 1, min_number))

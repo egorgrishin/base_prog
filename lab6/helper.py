@@ -25,3 +25,11 @@ def isNumber(number):
         return True
     except ValueError:
         return False
+
+
+def isNumbersList(numbers):
+    for number in numbers:
+        if not isNumber(number):
+            return False
+
+    return True

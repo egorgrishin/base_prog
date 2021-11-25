@@ -1,38 +1,27 @@
-import os
+import lab6.helper as Helper
 import numpy as np
 
 
-def main(file):
-    file_list = os.listdir()
-
-    if not checkFile(file, file_list):
+def main(input_name, output_name):
+    input_file = Helper.getFile(input_name)
+    if not input_file:
         print('Файл с входными данными не обнаружен')
         return False
 
-    f = open(file)
-    number = f.readline()
+    number = input_file.readline()
 
-    if not isNumber(number):
+    if not Helper.isNumber(number):
         print('В файле указаны некорректные данные')
         return False
 
-    printCountedNumber(getNumberCount(number))
+    number_data = getNumberData(number)
+    result = getCountedNumber(number_data)
+    
+    output_file = Helper.getFile(output_name, 'w')
+    Helper.outputResult(result, output_file)
 
 
-def checkFile(file, file_list):
-    return file in file_list
-    # Можно было return os.path.exists('input.txt')
-
-
-def isNumber(number):
-    try:
-        int(number)
-        return True
-    except ValueError:
-        return False
-
-
-def getNumberCount(number):
+def getNumberData(number):
     number_list = list(map(int, number))
 
     return {
@@ -43,13 +32,11 @@ def getNumberCount(number):
     }
 
 
-def printCountedNumber(counted_data):
-    f = open('output.txt', 'w')
-    f.write(f"""Число: {counted_data['number']}
+def getCountedNumber(counted_data):
+    return f"""Число: {counted_data['number']}
 Количество цифр: {counted_data['amount']}
 Сумма цифр: {counted_data['sum']}
-Произведение цифр: {counted_data['prod']}""")
-    f.close()
+Произведение цифр: {counted_data['prod']}"""
 
 
-main('input.txt')
+main('input.txt', 'output.txt')

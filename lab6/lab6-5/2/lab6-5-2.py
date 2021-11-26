@@ -3,19 +3,23 @@ import numpy
 
 
 def main(input_name, output_name):
+    # Получаем файл с входными данными, если он имеется
     input_file = Helper.getFile(input_name)
     if not input_file:
         print('Файл с входными данными не обнаружен')
         return False
 
+    # Читаем данные из файла и проверяем их
     number = input_file.readline()
     if not Helper.isNumber(number):
         print('В файле указаны некорректные данные')
         return False
 
+    # Производим вычисления
     number_data = getNumberData(number)
     result = getCountedNumber(number_data)
 
+    # Открываем выходной файл и печатаем в него результат
     output_file = Helper.getFile(output_name, 'w')
     Helper.outputResult(result, output_file)
 

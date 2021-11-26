@@ -33,3 +33,11 @@ def isNumbersList(numbers):
             return False
 
     return True
+
+
+def roundMatrix(matrix, digits):
+    for i in range(len(matrix)):
+        for k in range(len(matrix[i])):
+            matrix[i][k] = round(matrix[i][k], 2)
+
+    return matrix

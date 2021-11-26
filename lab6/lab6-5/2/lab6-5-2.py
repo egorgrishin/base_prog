@@ -1,5 +1,5 @@
 import lab6.helper as Helper
-import numpy as np
+import numpy
 
 
 def main(input_name, output_name):
@@ -9,14 +9,13 @@ def main(input_name, output_name):
         return False
 
     number = input_file.readline()
-
     if not Helper.isNumber(number):
         print('В файле указаны некорректные данные')
         return False
 
     number_data = getNumberData(number)
     result = getCountedNumber(number_data)
-    
+
     output_file = Helper.getFile(output_name, 'w')
     Helper.outputResult(result, output_file)
 
@@ -27,8 +26,8 @@ def getNumberData(number):
     return {
         'number': number,
         'amount': len(number),
-        'sum': np.sum(number_list),
-        'prod': np.prod(number_list),
+        'sum': numpy.sum(number_list),
+        'prod': numpy.prod(number_list),
     }
 
 

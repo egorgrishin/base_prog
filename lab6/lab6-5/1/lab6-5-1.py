@@ -11,7 +11,7 @@ def main(input_name):
 
     # Получаем размеры и проверяем их
     size = input_file.readline().split()
-    if not Helper.isNumbersList(size) or len(size) != 2:
+    if not Helper.isNumbersList(size) or not len(size) in [1, 2]:
         print('В файле указаны некорректные данные')
         return False
     size = list(map(int, size))

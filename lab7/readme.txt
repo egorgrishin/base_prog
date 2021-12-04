@@ -1,0 +1,1 @@
+Эти задания взяты с сайта https://informatics.msk.ru/course/view.php?id=5

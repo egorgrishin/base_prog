@@ -50,3 +50,11 @@ def checkFile(file) -> bool:
     """ Проверяет существование файла в директории """
 
     return os.path.exists(file)
+
+
+def check(a: list):
+    for i in range(len(a) - 1):
+        if a[i] > a[i + 1]:
+            return False
+
+    return True

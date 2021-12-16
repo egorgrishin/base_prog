@@ -1,3 +1,11 @@
+#!/usr/bin/env python
+
+""" Возводит число в степень """
+
+__author__ = "Egor Grishin"
+__status__ = "Production"
+
+
 def main() -> None:
     """
     Печатает в консоль результат возведения числа в степень
@@ -130,4 +138,5 @@ def printResult(result: str) -> None:
     print(result)
 
 
-main()
+if __name__ == '__main__':
+    main()
